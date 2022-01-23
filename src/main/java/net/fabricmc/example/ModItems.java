@@ -9,11 +9,10 @@ import net.minecraft.util.registry.Registry;
 
 public class ModItems {
 
-    public static final Item WOODEN_STAFF = registerItem("wooden_staff",
-            new ModStaffItem(ToolMaterials.WOOD, 3, -3f,
-                    new FabricItemSettings().group(ItemGroup.MISC)));
+    public static final Item WOODEN_STAFF = registerItem("wooden_staff",new ModStaffItem(ToolMaterials.WOOD,
+            3, -3f, new FabricItemSettings().group(ItemGroup.MISC)));
 
-    private static <T extends Item> T registerItem(String name, T item){
+        private static <T extends Item> T registerItem(String name, T item){
         return Registry.register(Registry.ITEM, new Identifier(StaffsInit.MOD_ID, name), item);
     }
 

@@ -15,8 +15,6 @@ import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.world.RaycastContext;
 import net.minecraft.world.World;
 
 import java.util.Random;
@@ -31,13 +29,16 @@ public class ModStaffItem extends SwordItem {
     //Right Click Attack
     public TypedActionResult<ItemStack> use(World world, PlayerEntity player, Hand hand) {
         ItemStack stack = player.getStackInHand(Hand.MAIN_HAND);
-        Vec3d lookPos = Vec3d.ofCenter(raycast(world,player, RaycastContext.FluidHandling.NONE).getBlockPos());
+        //Vec3d lookPos = Vec3d.ofCenter(raycast(world,player, RaycastContext.FluidHandling.NONE).getBlockPos());
 
         //Projectile
-        ModProjectile projectile = new ModProjectile(ModEntities.MOD_PROJECTILE, 1D,1D,1D, world);
-        projectile.setPosition(player.getX(),player.getY(),player.getZ());
-        projectile.setVelocity(player,player.getPitch(), player.getYaw(),0.0F, 1.5F, 0.5F);
-        world.spawnEntity(projectile);
+        if (!player.world.isClient) {
+            ModProjectile projectile = new ModProjectile(ModEntities.MOD_PROJECTILE, player.getX(), player.getY() + 1.5f, player.getZ(), world);
+            projectile.setNoGravity(false);
+           // projectile.setPosition(player.getX()+lookPos.x *1.5D, player.getY()+lookPos.y *1.5D, player.getZ()+lookPos.z*1.5D);
+            projectile.setVelocity(player, player.getPitch(), player.getYaw(), 0.0F, 3.5F, 0.5F);
+            world.spawnEntity(projectile);
+        }
 
         //5 tick attack cooldown
         int cooldown = 50;

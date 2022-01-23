@@ -4,28 +4,24 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
-import net.minecraft.entity.projectile.thrown.ThrownItemEntity;
-import net.minecraft.item.Item;
-import net.minecraft.item.Items;
+import net.minecraft.entity.projectile.ArrowEntity;
+
+import net.minecraft.entity.projectile.thrown.ThrownEntity;
 import net.minecraft.util.hit.EntityHitResult;
 import net.minecraft.util.hit.HitResult;
 import net.minecraft.world.World;
 
-public class ModProjectile extends ThrownItemEntity {
+public class ModProjectile extends ThrownEntity {
     public ModProjectile(EntityType<? extends ModProjectile>type, World world) {
         super(type, world);
     }
-    public ModProjectile(EntityType<? extends ModProjectile>type, LivingEntity thrower, World world) {
-        super(type, thrower,world);
+    public ModProjectile(EntityType<? extends ModProjectile>type, LivingEntity owner, World world) {
+        super(type, owner,world);
     }
     public ModProjectile(EntityType<? extends ModProjectile>type, double x, double y, double z, World world) {
-        super(type, x,y,z,world);
+        super(type,x,y,z,world);
     }
 
-    @Override
-    protected Item getDefaultItem() {
-        return Items.EGG;
-    }
 
     @Override
     protected void onCollision(HitResult result)
@@ -36,5 +32,10 @@ public class ModProjectile extends ThrownItemEntity {
             Entity entityHit = ((EntityHitResult) result).getEntity();
             entityHit.damage(DamageSource.thrownProjectile(this, thrower), 1.0F);
         }
+    }
+
+    @Override
+    protected void initDataTracker() {
+
     }
 }
