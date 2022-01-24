@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "staffs",
   "version": "${version}",
 
-  "name": "Example Mod",
+  "name": "Staffs Mod",
   "description": "This is an example description! Tell everyone what your mod is about!",
   "authors": [
     "Me!"
@@ -14,20 +14,18 @@
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/staffs/icon.png",
 
   "environment": "*",
   "entrypoints": {
     "main": [
-      "net.fabricmc.example.StaffsInit"
+      "net.xanthian.staffs.StaffsInit"
     ],
     "client":[
-      "net.fabricmc.example.StaffsClientInit"
+      "net.xanthian.staffs.StaffsClientInit"
       ]
   },
-  "mixins": [
-    "modid.mixins.json"
-  ],
+
 
   "depends": {
     "fabricloader": ">=0.11.3",

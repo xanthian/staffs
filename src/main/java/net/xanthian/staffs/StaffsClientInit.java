@@ -1,7 +1,6 @@
-package net.fabricmc.example;
+package net.xanthian.staffs;
 
 import net.fabricmc.api.ClientModInitializer;
-import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.impl.client.rendering.EntityRendererRegistryImpl;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

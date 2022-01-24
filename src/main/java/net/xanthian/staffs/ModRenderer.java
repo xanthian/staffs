@@ -1,4 +1,4 @@
-package net.fabricmc.example;
+package net.xanthian.staffs;
 
 import net.minecraft.client.render.OverlayTexture;
 import net.minecraft.client.render.RenderLayer;
@@ -17,18 +17,20 @@ public class ModRenderer extends EntityRenderer<ModProjectile> {
         super(ctx);
     }
 
-    private static final Identifier TEXTURE_LOCATION = new Identifier("textures/entity/enderdragon/dragon_fireball.png");
+
+    private static final Identifier TEXTURE_LOCATION = new Identifier("textures/item/fire_charge.png");
     private static final RenderLayer RENDER_TYPE = RenderLayer.getEntityCutoutNoCull(TEXTURE_LOCATION);
 
-    private static void vertex(VertexConsumer vertexConsumer, Matrix4f matrix4f, Matrix3f matrix3f, int packedLight, float y, int z, int u, int v) {
-        vertexConsumer.vertex(matrix4f, y - 0.5F, (float)z - 0.25F, 0.0F).color(255, 255, 255, 255).texture((float)u, (float)v).overlay(OverlayTexture.DEFAULT_UV).light(packedLight).normal(matrix3f, 0.0F, 1.0F, 0.0F).next();
+    private static void vertex(VertexConsumer vertexConsumer, Matrix4f matrix4f, Matrix3f matrix3f, int packedLight, float x, int y, int u, int v) {
+        vertexConsumer.vertex(matrix4f, x - 0.5F, (float)y - 1.0F, 0.0F).color(255, 255, 255, 255).texture((float)u, (float)v).overlay(OverlayTexture.DEFAULT_UV).light(packedLight).normal(matrix3f, 0.0F, 1.0F, 0.0F).next();
     }
     @Override
     public void render(ModProjectile projectile, float x, float partialTick, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider, int packedLight) {
         matrixStack.push();
-        matrixStack.scale(2.0F, 2.0F, 2.0F);
+        matrixStack.scale(1F, 1F, 1F);
         matrixStack.multiply(this.dispatcher.getRotation());
         matrixStack.multiply(Vec3f.POSITIVE_Y.getDegreesQuaternion(180.0F));
+      //  matrixStack.multiply(Vec3f.POSITIVE_Y.getRadialQuaternion(projectile.age));
         MatrixStack.Entry posestack$pose = matrixStack.peek();
         Matrix4f matrix4f = posestack$pose.getPositionMatrix();
         Matrix3f matrix3f = posestack$pose.getNormalMatrix();
@@ -43,7 +45,7 @@ public class ModRenderer extends EntityRenderer<ModProjectile> {
 
     @Override
     public Identifier getTexture(ModProjectile entity) {
-        return  new Identifier("textures/entity/enderdragon/dragon_fireball.png");
+        return  new Identifier("textures/block/diamond_block.png");
     }
 
 

@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    " ##",
+    " S#",
+    "S  "
+  ],
+  "key":
+  {
+    "#":
+    {
+      "tag": "minecraft:stone_crafting_materials"
+    },
+    "S":
+    {
+      "item": "minecraft:stick"
+    }
+  },
+  "result":
+  {
+    "item": "staffs:stone_staff"
+  }
+}
