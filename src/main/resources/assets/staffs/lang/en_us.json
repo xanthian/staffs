@@ -1,0 +1,17 @@
+{
+  "item.staffs.wooden_staff": "Wooden Staff",
+  "item.staffs.stone_staff": "Stone Staff",
+  "item.staffs.iron_staff": "Iron Staff",
+  "item.staffs.golden_staff": "Golden Staff",
+  "item.staffs.diamond_staff": "Diamond Staff",
+  "item.staffs.netherite_staff": "Netherite Staff",
+
+  "item.staffs.teleportation_staff": "Teleportation Staff",
+  "item.staffs.lightning_staff": "Lightning Staff",
+  "item.staffs.fireball_staff": "Fireball Staff",
+  "item.staffs.firebomb_staff": "Firebomb Staff",
+  "item.staffs.poison_staff": "Poison Staff",
+  "item.staffs.healing_staff": "Healing Staff",
+
+  "itemgroup.staffs.staffs": "Staffs"
+}

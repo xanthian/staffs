@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern":
+  [
+    "###",
+    "#S#",
+    "ZZZ"
+  ],
+  "key":
+  {
+    "#":
+    {
+      "item": "minecraft:golden_apple"
+    },
+    "S":
+    {
+      "item": "staffs:netherite_staff"
+    },
+    "Z":
+    {
+      "item": "minecraft:diamond"
+    }
+  },
+  "result":
+  {
+    "item": "staffs:diamond_staff"
+  }
+}

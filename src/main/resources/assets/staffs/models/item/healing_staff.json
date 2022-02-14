@@ -1,0 +1,8 @@
+{
+  "parent": "item/handheld",
+  "textures":
+  {
+    "layer0": "staffs:item/healing_staff",
+    "particle": "minecraft:item/diamond"
+      }
+}

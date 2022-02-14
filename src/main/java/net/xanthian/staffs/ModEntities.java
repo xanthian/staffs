@@ -11,12 +11,12 @@ public class ModEntities
 
     public static final EntityType<ModProjectile> MOD_PROJECTILE = Registry.register(
             Registry.ENTITY_TYPE, new Identifier(StaffsInit.MOD_ID, "mod_projectile"),
-            FabricEntityTypeBuilder.<ModProjectile>create(SpawnGroup.MISC, ModProjectile::new).build()
+            FabricEntityTypeBuilder.<ModProjectile>create( SpawnGroup.MISC, ModProjectile::new).build()
     );
 
       public static void registerModEntities()
     {
-        StaffsInit.LOGGER.info("Registering ModEntities for " + StaffsInit.MOD_ID);
+        StaffsInit.LOGGER.info("Registering Entities for " + StaffsInit.MOD_ID);
 
     }
 }

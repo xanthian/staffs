@@ -1,7 +1,7 @@
 {
   "type": "minecraft:smithing",
   "base": {
-    "item": "feyrune:diamond_staff"
+    "item": "staffs:diamond_staff"
   },
   "addition": {
     "item": "minecraft:netherite_ingot"
